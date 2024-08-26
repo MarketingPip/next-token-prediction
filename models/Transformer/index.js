@@ -1,12 +1,8 @@
-const { dirname } = require('path');
-const __root = dirname(require.main.filename);
-const fs = require('fs').promises;
 
 const { merge } = require('lodash');
 const dotenv = require('dotenv');
 
 const {
-  combineDocuments,
   isLowerCase
 } = require('../../utils');
 
@@ -340,7 +336,7 @@ module.exports = () => {
 
     console.log(NOTIF_TRAINING);
 
-    trainingText = await combineDocuments(files);
+    trainingText = files
 
     trainingTokens = trainingText.split(' ');
 
