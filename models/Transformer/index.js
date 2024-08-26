@@ -386,11 +386,7 @@ module.exports = () => {
       console.log(`Token "${nextToken}" ranked: ${embedding[token][nextToken]} (when following ${token}).`);
     });
 
-    const embeddingPath = `${__root}/training/embeddings/${name}.json`;
-
-    await fs.writeFile(
-      embeddingPath, JSON.stringify(embedding)
-    );
+ 
 
     console.log(`Wrote to file: ${embeddingPath}.`);
 
@@ -399,6 +395,8 @@ module.exports = () => {
     );
 
     createEmbedding(embedding);
+
+    return embedding
   };
 
   /**
