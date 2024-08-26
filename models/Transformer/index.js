@@ -8,10 +8,9 @@ const {
 
 dotenv.config();
 
-const {
-  RANKING_BATCH_SIZE = 50,
-  MAX_RESPONSE_LENGTH = 240
-} = process.env;
+const RANKING_BATCH_SIZE = 50
+const MAX_RESPONSE_LENGTH = 240
+
 
 // Tokenizer utils. Designed for words and phrases.
 
