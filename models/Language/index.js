@@ -1,5 +1,4 @@
-const { dirname } = require('path');
-const __root = dirname(require.main.filename);
+ 
 
 const Transformer = require('../Transformer');
 
@@ -8,7 +7,7 @@ const {
   fetchEmbeddingByName
 } = require('../../utils');
 
-const DEFAULT_DATASET = require(`${__root}/training/datasets/OpenSourceBooks`);
+ 
 
 const NEW_DATASET_NAME = 'New Dataset';
 
@@ -54,11 +53,11 @@ module.exports = async ({
 
       // concatenate and store all reference text
 
-      const text = await combineDocuments(dataset.files);
+      const text = dataset.files
 
       // load the corresponding embedding file
 
-      const embedding = await fetchEmbeddingByName(dataset.name);
+      const embedding = dataset.name
 
       // build training data object
 
